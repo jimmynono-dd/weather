@@ -7,7 +7,7 @@
     <meta name="description" content="Weather App, forecasts and more">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
   </head>
   <body ng-app="WeatherApp">
 
@@ -19,9 +19,8 @@
       </div>
       <h2>{{temp | number:0 }}&deg;</h2>
       <ul>
-        <li>{{wind | number:1}} kph</li>
+        <li>{{wind | number:1}} mph {{windDirection}}&deg;</li>
         <li>{{humidity}} % Humidity</li>
-        <li>%72</li>
       </ul>
     </section>
 
