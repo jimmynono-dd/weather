@@ -15,12 +15,12 @@
       <div class="time-date">
         <span class="icon-moon"></span>
         <h1>{{city}}</h1>
-        <p>Wednesday, Nov 11</p>
+        <p>{{date | date: 'EEEE MMM, dd'}}</p>
       </div>
       <h2>{{temp | number:0 }}&deg;</h2>
       <ul>
-        <li>4kph</li>
-        <li>%35</li>
+        <li>{{wind | number:1}} kph</li>
+        <li>{{humidity}} % Humidity</li>
         <li>%72</li>
       </ul>
     </section>

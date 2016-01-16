@@ -7,8 +7,11 @@ app.controller('WeatherAppController', function($scope, $http) {
   })
   .success(function(response) {
     console.log(response);
+    $scope.date = new Date();
     $scope.city = response.name;
     $scope.temp = response.main.temp;
+    $scope.wind = response.wind.speed;
+    $scope.humidity = response.main.humidity;
   });
 
   // $scope.message = "88";
