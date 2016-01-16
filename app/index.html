@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Weathered</title>
+    <meta name="description" content="Weather App, forecasts and more">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body ng-app="weatherApp">
+
+    <section class="detail">
+      <div class="time-date">
+        <span class="icon-moon"></span>
+        <h1>Seattle</h1>
+        <p>Wednesday, Nov 11</p>
+      </div>
+      <h2>47&deg;</h2>
+      <ul>
+        <li>4kph</li>
+        <li>%35</li>
+        <li>%72</li>
+      </ul>
+    </section>
+
+    <section class="forecast">
+      <ul>
+        <li><p>Tuesday</p><br><span class="icon-rainy"></span><h3>21&deg;<h3></li>
+        <li><p>Wednesday</p><br><span class="icon-rainy2"></span><h3>16&deg;<h3></li>
+        <li><p>Thursday</p><br><span class="icon-lightning3"></span><h3>19&deg;<h3></li>
+        <li><p>Friday</p><br><span class="icon-cloud4"></span><h3>26&deg;<h3></li>
+      </ul>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-2.1.4.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+  </body>
+</html>
