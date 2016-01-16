@@ -1,0 +1,43 @@
+.forecast {
+  font-family: $primary-font;
+
+  ul {
+    font-size: 0;
+  }
+
+  li {
+    font-size: .75rem;
+    display: inline-block;
+    height: 10rem;
+    width: calc(100% / 4);
+    max-width: 200px;
+    padding: 20px 5px;
+  }
+
+  li:nth-child(1) {
+    background-color: $forecast-background-color-one;
+  }
+
+  li:nth-child(2) {
+    background-color: $forecast-background-color-two;
+  }
+
+  li:nth-child(3) {
+    background-color: $forecast-background-color-three;
+  }
+
+  li:nth-child(4) {
+    background-color: $forecast-background-color-four;
+  }
+
+  h3 {
+    font-size: 3em;
+    margin-top: .5em;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+}

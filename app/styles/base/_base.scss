@@ -1,0 +1,22 @@
+body {
+  background-color: $primary-background-color;
+  color: $primary-font-color;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+span {
+  font-size: 4em;
+  font-weight: lighter;
+
+  .detail {
+    color: blue;
+  }
+}

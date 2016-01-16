@@ -1,0 +1,30 @@
+.detail {
+  font-family: $primary-font;
+  text-transform: uppercase;
+
+
+  h1 {
+    font-weight: lighter;
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: .75rem;
+  }
+
+  h2 {
+    font-size: 10em;
+    margin: 5rem auto;
+    font-weight: thin;
+  }
+
+  li {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  span {
+    font-weight: 100;
+    font-size: 8em;
+  }
+}
