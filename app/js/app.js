@@ -52,31 +52,32 @@ app.controller('ForecastController', function($scope, $http) {
 });
 
 function iconSelector(data) {
-  if (data == "01d") {
+  console.log(data);
+  if (data == "01d" | "03n") {
     return 'icon-sun';
   }
-  if (data == "02d") {
+  else if (data == "02d" | "02n") {
     return 'icon-cloudy';
   }
-  if (data == "03d") {
+  else if (data == "03d" | "03n") {
     return 'icon-cloud2';
   }
-  if (data == "04d") {
+  else if (data == "04d" | "04n") {
     return 'icon-cloud3';
   }
-  if (data == "09d") {
+  else if (data == "09d" | "09n") {
     return 'icon-rainy';
   }
-  if (data == "10d") {
+  else if (data == "10d" | "10n") {
     return 'icon-rainy';
   }
-  if (data == "11d") {
+  else if (data == "11d" | "11n") {
     return 'icon-rainy';
   }
-  if (data == "13d") {
+  else if (data == "13d" | "13n") {
     return 'icon-snowy';
   }
-  if (data == "50d") {
+  else if (data == "50d" | "50n") {
     return 'icon-rainy4';
   }
   else {
