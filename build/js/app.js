@@ -54,31 +54,31 @@ app.controller('ForecastController', function($scope, $http) {
 
 function iconSelector(data) {
   console.log(data);
-  if (data == "01d" | "03n") {
+  if (data == "01d" || data == "01n") {
     return 'icon-sun';
   }
-  else if (data == "02d" | "02n") {
+  else if (data == "02d" || data == "02n") {
     return 'icon-cloudy';
   }
-  else if (data == "03d" | "03n") {
+  else if (data == "03d" || data == "03n") {
     return 'icon-cloud2';
   }
-  else if (data == "04d" | "04n") {
+  else if (data == "04d" || data == "04n") {
     return 'icon-cloud3';
   }
-  else if (data == "09d" | "09n") {
+  else if (data == "09d" || data == "09n") {
     return 'icon-rainy';
   }
-  else if (data == "10d" | "10n") {
+  else if (data == "10d" || data == "10n") {
     return 'icon-rainy';
   }
-  else if (data == "11d" | "11n") {
+  else if (data == "11d" || data == "11n") {
     return 'icon-rainy';
   }
-  else if (data == "13d" | "13n") {
+  else if (data == "13d" || data == "13n") {
     return 'icon-snowy';
   }
-  else if (data == "50d" | "50n") {
+  else if (data == "50d" || data == "50n") {
     return 'icon-rainy4';
   }
   else {

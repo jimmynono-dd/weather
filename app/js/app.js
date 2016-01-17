@@ -1,5 +1,5 @@
 var app = angular.module('WeatherApp', []);
-var city = 'mexicocity';
+var city = 'seattle';
 
 app.controller('WeatherAppController', function($scope, $http) {
   $http({
