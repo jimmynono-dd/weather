@@ -12,8 +12,37 @@ app.controller('WeatherAppController', function($scope, $http) {
     $scope.temp = response.main.temp;
     $scope.wind = response.wind.speed  * 2.23694;
     $scope.humidity = response.main.humidity;
-    $scope.windDirection = response.wind.deg;
+    $scope.windDirection = windDirection(response.wind.deg);
   });
 
-  // $scope.message = "88";
 });
+
+function windDirection(degree) {
+
+  if (degree >= 350 || (degree >=0 && degree < 10)) {
+     return "North"
+  }
+  if (degree >= 10 && degree < 80) {
+     return "North East"
+  }
+  if (degree >= 80 && degree < 100) {
+     return "East"
+  }
+  if (degree >= 100 && degree < 170) {
+     return "South East"
+  }
+  if (degree >= 170 && degree < 190) {
+     return "South"
+  }
+  if (degree >= 190 && degree < 260) {
+     return "SouthWest"
+  }
+  if (degree >= 260 && degree < 280) {
+     return "West"
+  }
+  if (degree >= 280 && degree < 350) {
+     return "North West"
+  }
+
+  else return degree;
+}
