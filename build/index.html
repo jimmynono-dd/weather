@@ -24,12 +24,12 @@
       </ul>
     </section>
 
-    <section class="forecast">
+    <section class="forecast" ng-controller="ForecastController">
       <ul>
-        <li><p>Tuesday</p><br><span class="icon-rainy"></span><h3>21&deg;<h3></li>
-        <li><p>Wednesday</p><br><span class="icon-rainy2"></span><h3>16&deg;<h3></li>
-        <li><p>Thursday</p><br><span class="icon-lightning3"></span><h3>19&deg;<h3></li>
-        <li><p>Friday</p><br><span class="icon-cloud4"></span><h3>26&deg;<h3></li>
+        <li><p>{{ dayOneDate | date: 'EEEE'}}</p><br><span class="icon-rainy"></span><h3>{{ dayOne| number:0}}&deg;<h3></li>
+        <li><p>{{ dayTwoDate | date: 'EEEE'}}</p><br><span class="icon-rainy2"></span><h3>{{ dayTwo| number:0}}&deg;<h3></li>
+        <li><p>{{ dayThreeDate | date: 'EEEE'}}</p><br><span class="icon-lightning3"></span><h3>{{ dayThree| number:0}}&deg;<h3></li>
+        <li><p>{{ dayFourDate | date: 'EEEE'}}</p><br><span class="icon-cloud4"></span><h3>{{ dayFour| number:0}}&deg;<h3></li>
       </ul>
     </section>
 

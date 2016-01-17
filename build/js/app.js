@@ -14,11 +14,19 @@ app.controller('WeatherAppController', function($scope, $http) {
     $scope.humidity = response.main.humidity;
     $scope.windDirection = windDirection(response.wind.deg);
   });
+});
 
+app.controller('ForecastController', function($scope, $http) {
+  $http({
+    method: 'GET',
+    url: 'api.openweathermap.org/data/2.5/forecast/daily?q=seattle&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
+  }).
+  success(function(response) {
+    console.log(response.list[0].temp.day)
+  })
 });
 
 function windDirection(degree) {
-  alert(degree);
 
   if (degree >= 350 || (degree >=0 && degree < 10)) {
      return "North"

@@ -29099,7 +29099,34 @@
 	    $scope.humidity = response.main.humidity;
 	    $scope.windDirection = windDirection(response.wind.deg);
 	  });
+	});
 
+	app.controller('ForecastController', function($scope, $http) {
+	  $http({
+	    method: 'GET',
+	    url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=seattle&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
+	  }).
+	  success(function(response) {
+	    var today = new Date();
+	    var dayOneDay = new Date(today);
+	    dayOneDay.setDate(today.getDate() + 1);
+	    var dayTwoDay = new Date(today);
+	    dayTwoDay.setDate(today.getDate() + 2);
+	    var dayThreeDay = new Date(today);
+	    dayThreeDay.setDate(today.getDate() + 3);
+	    var dayFourDay = new Date(today);
+	    dayFourDay.setDate(today.getDate() + 4);
+
+	    $scope.dayOneDate = dayOneDay;
+	    $scope.dayTwoDate = dayTwoDay;
+	    $scope.dayThreeDate = dayThreeDay;
+	    $scope.dayFourDate = dayFourDay;
+
+	    $scope.dayOne = response.list[0].temp.day;
+	    $scope.dayTwo = response.list[1].temp.day;
+	    $scope.dayThree = response.list[2].temp.day;
+	    $scope.dayFour = response.list[3].temp.day;
+	  })
 	});
 
 	function windDirection(degree) {
