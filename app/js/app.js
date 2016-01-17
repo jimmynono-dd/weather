@@ -41,8 +41,18 @@ app.controller('ForecastController', function($scope, $http) {
     $scope.dayTwo = response.list[1].temp.day;
     $scope.dayThree = response.list[2].temp.day;
     $scope.dayFour = response.list[3].temp.day;
+
+    $scope.dayOneForecastIcon = "icon-sun2";
+    $scope.dayTwoForecastIcon = "icon-sun2";
+    $scope.dayThreeForecastIcon = "icon-sun2";
+    $scope.dayFourForecastIcon = "icon-sun2";
+
   })
 });
+
+function iconSelector(data) {
+  
+};
 
 function windDirection(degree) {
 

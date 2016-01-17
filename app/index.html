@@ -26,10 +26,10 @@
 
     <section class="forecast" ng-controller="ForecastController">
       <ul>
-        <li><p>{{ dayOneDate | date: 'EEEE'}}</p><br><span class="icon-rainy"></span><h3>{{ dayOne| number:0}}&deg;<h3></li>
-        <li><p>{{ dayTwoDate | date: 'EEEE'}}</p><br><span class="icon-rainy2"></span><h3>{{ dayTwo| number:0}}&deg;<h3></li>
-        <li><p>{{ dayThreeDate | date: 'EEEE'}}</p><br><span class="icon-lightning3"></span><h3>{{ dayThree| number:0}}&deg;<h3></li>
-        <li><p>{{ dayFourDate | date: 'EEEE'}}</p><br><span class="icon-cloud4"></span><h3>{{ dayFour| number:0}}&deg;<h3></li>
+        <li><p>{{ dayOneDate | date: 'EEEE'}}</p><br><span class="ng-class: dayOneForecastIcon"></span><h3>{{ dayOne| number:0}}&deg;<h3></li>
+        <li><p>{{ dayTwoDate | date: 'EEEE'}}</p><br><span class="ng-class: dayTwoForecastIcon"></span><h3>{{ dayTwo| number:0}}&deg;<h3></li>
+        <li><p>{{ dayThreeDate | date: 'EEEE'}}</p><br><span class="ng-class: dayThreeForecastIcon"></span><h3>{{ dayThree| number:0}}&deg;<h3></li>
+        <li><p>{{ dayFourDate | date: 'EEEE'}}</p><br><span class="ng-class: dayFourForecastIcon"></span><h3>{{ dayFour| number:0}}&deg;<h3></li>
       </ul>
     </section>
 
