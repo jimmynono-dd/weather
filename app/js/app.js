@@ -6,7 +6,6 @@ app.controller('WeatherAppController', function($scope, $http) {
     url: 'http://api.openweathermap.org/data/2.5/weather?q=seattle&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
   })
   .success(function(response) {
-    console.log(response);
     $scope.date = new Date();
     $scope.city = response.name;
     $scope.temp = response.main.temp;
@@ -22,6 +21,8 @@ app.controller('ForecastController', function($scope, $http) {
     url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=seattle&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
   }).
   success(function(response) {
+    console.log(response);
+
     var today = new Date();
     var dayOneDay = new Date(today);
     dayOneDay.setDate(today.getDate() + 1);
@@ -42,16 +43,45 @@ app.controller('ForecastController', function($scope, $http) {
     $scope.dayThree = response.list[2].temp.day;
     $scope.dayFour = response.list[3].temp.day;
 
-    $scope.dayOneForecastIcon = "icon-sun2";
-    $scope.dayTwoForecastIcon = "icon-sun2";
-    $scope.dayThreeForecastIcon = "icon-sun2";
-    $scope.dayFourForecastIcon = "icon-sun2";
+    $scope.dayOneForecastIcon = iconSelector(response.list[0].weather[0].icon);
+    $scope.dayTwoForecastIcon = iconSelector(response.list[1].weather[0].icon);
+    $scope.dayThreeForecastIcon = iconSelector(response.list[2].weather[0].icon);
+    $scope.dayFourForecastIcon = iconSelector(response.list[3].weather[0].icon);
 
   })
 });
 
 function iconSelector(data) {
-  
+  if (data == "01d") {
+    return 'icon-sun';
+  }
+  if (data == "02d") {
+    return 'icon-cloudy';
+  }
+  if (data == "03d") {
+    return 'icon-cloud2';
+  }
+  if (data == "04d") {
+    return 'icon-cloud3';
+  }
+  if (data == "09d") {
+    return 'icon-rainy';
+  }
+  if (data == "10d") {
+    return 'icon-rainy';
+  }
+  if (data == "11d") {
+    return 'icon-rainy';
+  }
+  if (data == "13d") {
+    return 'icon-snowy';
+  }
+  if (data == "50d") {
+    return 'icon-rainy4';
+  }
+  else {
+    return 'icon-none'
+  }
 };
 
 function windDirection(degree) {

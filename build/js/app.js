@@ -42,9 +42,19 @@ app.controller('ForecastController', function($scope, $http) {
     $scope.dayThree = response.list[2].temp.day;
     $scope.dayFour = response.list[3].temp.day;
 
-    var dayOneForecastIcon = "icon-sun2"
+    $scope.dayOneForecastIcon = iconSelector(response.list[0].weather.icon);
+    $scope.dayTwoForecastIcon = "icon-sun2";
+    $scope.dayThreeForecastIcon = "icon-sun2";
+    $scope.dayFourForecastIcon = "icon-sun2";
+
   })
 });
+
+function iconSelector(data) {
+  if (data == "10d") {
+    return icon-rainy;
+  }
+};
 
 function windDirection(degree) {
 
