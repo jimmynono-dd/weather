@@ -29098,6 +29098,7 @@
 	    $scope.wind = response.wind.speed  * 2.23694;
 	    $scope.humidity = response.main.humidity;
 	    $scope.windDirection = windDirection(response.wind.deg);
+	    $scope.currentWeatherIcon = iconSelector(response.weather[0].icon);
 	  });
 	});
 
@@ -29107,7 +29108,6 @@
 	    url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
 	  }).
 	  success(function(response) {
-	    console.log(response);
 
 	    var today = new Date();
 	    var dayOneDay = new Date(today);
@@ -29138,7 +29138,6 @@
 	});
 
 	function iconSelector(data) {
-	  console.log(data);
 	  if (data == "01d" || data == "01n") {
 	    return 'icon-sun';
 	  }
@@ -29149,7 +29148,7 @@
 	    return 'icon-cloud2';
 	  }
 	  else if (data == "04d" || data == "04n") {
-	    return 'icon-cloud3';
+	    return 'icon-cloudy';
 	  }
 	  else if (data == "09d" || data == "09n") {
 	    return 'icon-rainy';

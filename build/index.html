@@ -7,14 +7,17 @@
     <meta name="description" content="Weather App, forecasts and more">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body ng-app="WeatherApp">
 
     <section class="detail" ng-controller="WeatherAppController">
       <div class="time-date">
-        <span class="icon-moon"></span>
+        <span class="ng-class: currentWeatherIcon"></span>
         <h1>{{city}}</h1>
+        <p>
+          {{currentWeather}}
+        </p>
         <p>{{date | date: 'EEEE MMM, dd'}}</p>
       </div>
       <h2>{{temp | number:0 }}&deg;</h2>

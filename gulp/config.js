@@ -14,7 +14,7 @@ module.exports = {
   },
   sass: {
     src: src + "/styles/**/*.{sass,scss}",
-    dest: dest + '/styles/',
+    dest: dest,
     settings: {
       indentedSyntax: true, // Enable .sass syntax!
     }

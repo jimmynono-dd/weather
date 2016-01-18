@@ -13,6 +13,9 @@ app.controller('WeatherAppController', function($scope, $http) {
     $scope.wind = response.wind.speed  * 2.23694;
     $scope.humidity = response.main.humidity;
     $scope.windDirection = windDirection(response.wind.deg);
+
+    $scope.currentWeatherIcon = iconSelector(response.weather.icon);
+    console.log(response + ' icon')
   });
 });
 
@@ -22,7 +25,6 @@ app.controller('ForecastController', function($scope, $http) {
     url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&units=imperial&appid=f3b7c0e02a9e45674adf168e76fcb6ee'
   }).
   success(function(response) {
-    console.log(response);
 
     var today = new Date();
     var dayOneDay = new Date(today);
@@ -53,7 +55,6 @@ app.controller('ForecastController', function($scope, $http) {
 });
 
 function iconSelector(data) {
-  console.log(data);
   if (data == "01d" || data == "01n") {
     return 'icon-sun';
   }
