@@ -2,6 +2,10 @@
   font-family: $primary-font;
   text-transform: uppercase;
 
+  em {
+    font-weight: 100;
+    font-size: 8em;
+  }
 
   h1 {
     font-weight: lighter;
@@ -16,6 +20,10 @@
     font-size: 10em;
     margin: 5rem auto;
     font-weight: thin;
+
+    &:after {
+      content: "\00b0"
+    }
   }
 
   li {
@@ -24,7 +32,6 @@
   }
 
   span {
-    font-weight: 100;
-    font-size: 8em;
+      font-size: 1em;  
   }
 }

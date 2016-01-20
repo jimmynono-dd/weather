@@ -29085,6 +29085,10 @@
 
 	var app = angular.module('WeatherApp', []);
 	var city = 'seattle';
+	var location = {
+	  latitude: '',
+	  longitude: ''
+	};
 
 	app.controller('WeatherAppController', function($scope, $http) {
 	  $http({
@@ -29094,7 +29098,7 @@
 	  .success(function(response) {
 	    $scope.date = new Date();
 	    $scope.city = response.name;
-	    $scope.temp = response.main.temp;
+	    $scope.temp = response.main.temp
 	    $scope.wind = response.wind.speed  * 2.23694;
 	    $scope.humidity = response.main.humidity;
 	    $scope.windDirection = windDirection(response.wind.deg);
@@ -29137,6 +29141,30 @@
 	  })
 	});
 
+	// GeoLocation
+	var options = {
+	  enableHighAccuracy: true,
+	  timeout: 5000,
+	  maximumAge: 0
+	};
+
+	function success(pos) {
+	  var crd = pos.coords;
+
+	  location.longitude = pos.longitude;
+	  location.latitude = pos.latitude;
+
+	}
+
+	function error(err) {
+	  console.warn('ERROR(' + err.code + '): ' + err.message)
+	};
+
+	navigator.geolocation.getCurrentPosition(success, error, options)
+
+	console.log(location.longitude + " here")
+
+	//Icon Selectors
 	function iconSelector(data) {
 	  if (data == "01d" || data == "01n") {
 	    return 'icon-sun';

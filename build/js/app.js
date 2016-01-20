@@ -1,5 +1,9 @@
 var app = angular.module('WeatherApp', []);
 var city = 'seattle';
+var location = {
+  latitude: '',
+  longitude: ''
+};
 
 app.controller('WeatherAppController', function($scope, $http) {
   $http({
@@ -9,13 +13,11 @@ app.controller('WeatherAppController', function($scope, $http) {
   .success(function(response) {
     $scope.date = new Date();
     $scope.city = response.name;
-    $scope.temp = response.main.temp;
+    $scope.temp = response.main.temp
     $scope.wind = response.wind.speed  * 2.23694;
     $scope.humidity = response.main.humidity;
     $scope.windDirection = windDirection(response.wind.deg);
-
-    $scope.currentWeatherIcon = iconSelector(response.weather.icon);
-    console.log(response + ' icon')
+    $scope.currentWeatherIcon = iconSelector(response.weather[0].icon);
   });
 });
 
@@ -54,6 +56,30 @@ app.controller('ForecastController', function($scope, $http) {
   })
 });
 
+// GeoLocation
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  location.longitude = pos.longitude;
+  location.latitude = pos.latitude;
+
+}
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message)
+};
+
+navigator.geolocation.getCurrentPosition(success, error, options)
+
+console.log(location.longitude + " here")
+
+//Icon Selectors
 function iconSelector(data) {
   if (data == "01d" || data == "01n") {
     return 'icon-sun';
@@ -65,7 +91,7 @@ function iconSelector(data) {
     return 'icon-cloud2';
   }
   else if (data == "04d" || data == "04n") {
-    return 'icon-cloud3';
+    return 'icon-cloudy';
   }
   else if (data == "09d" || data == "09n") {
     return 'icon-rainy';

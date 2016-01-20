@@ -13,26 +13,24 @@
 
     <section class="detail" ng-controller="WeatherAppController">
       <div class="time-date">
-        <span class="ng-class: currentWeatherIcon"></span>
-        <h1>{{city}}</h1>
-        <p>
-          {{currentWeather}}
-        </p>
-        <p>{{date | date: 'EEEE MMM, dd'}}</p>
+        <em class="ng-class: currentWeatherIcon"></em>
+        <h1 ng-bind="city"></h1>
+        <p ng-bind="currentWeather"></p>
+        <p ng-bind="date | date: 'EEEE MMM, dd'"</p>
       </div>
-      <h2>{{temp | number:0 }}&deg;</h2>
+      <h2 ng-bind="temp | number:0"></h2>
       <ul>
-        <li>{{wind | number:1}} mph {{windDirection}}</li>
-        <li>{{humidity}} % Humidity</li>
+        <li><span ng-bind="wind | number:1"></span> mph <span ng-bind="windDirection"></span></li>
+        <li><span ng-bind="humidity"></span> % Humidity</li>
       </ul>
     </section>
 
     <section class="forecast" ng-controller="ForecastController">
       <ul>
-        <li><p>{{ dayOneDate | date: 'EEEE'}}</p><br><span class="ng-class: dayOneForecastIcon"></span><h3>{{ dayOne| number:0}}&deg;<h3></li>
-        <li><p>{{ dayTwoDate | date: 'EEEE'}}</p><br><span class="ng-class: dayTwoForecastIcon"></span><h3>{{ dayTwo| number:0}}&deg;<h3></li>
-        <li><p>{{ dayThreeDate | date: 'EEEE'}}</p><br><span class="ng-class: dayThreeForecastIcon"></span><h3>{{ dayThree| number:0}}&deg;<h3></li>
-        <li><p>{{ dayFourDate | date: 'EEEE'}}</p><br><span class="ng-class: dayFourForecastIcon"></span><h3>{{ dayFour| number:0}}&deg;<h3></li>
+        <li><p ng-bind="dayOneDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayOneForecastIcon"></span><h3><span ng-bind="dayOne| number:0"></span>&deg;<h3></li>
+        <li><p ng-bind="dayTwoDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayTwoForecastIcon"></span><h3><span ng-bind="dayTwo| number:0"></span>&deg;<h3></li>
+        <li><p ng-bind="dayThreeDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayThreeForecastIcon"></span><h3><span ng-bind="dayThree| number:0"></span>&deg;<h3></li>
+        <li><p ng-bind="dayFourDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayFourForecastIcon"></span><h3><span ng-bind=" dayFour| number:0"></span>&deg;<h3></li>
       </ul>
     </section>
 
