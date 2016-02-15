@@ -1,0 +1,21 @@
+<div class="time-date">
+  <em class="ng-class: currentWeatherIcon"></em>
+  <h1 ng-bind="city"></h1>
+  <p ng-bind="currentWeather"></p>
+  <p ng-bind="date | date: 'EEEE MMM, dd'"</p>
+</div>
+<h2 ng-bind="temp | number:0"></h2>
+<ul>
+  <li><span ng-bind="wind | number:1"></span> mph <span ng-bind="windDirection"></span></li>
+  <li><span ng-bind="humidity"></span> % Humidity</li>
+</ul>
+</section>
+
+<section class="forecast">
+<ul>
+  <li><p ng-bind="dayOneDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayOneForecastIcon"></span><h3><span ng-bind="dayOne| number:0"></span>&deg;<h3></li>
+  <li><p ng-bind="dayTwoDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayTwoForecastIcon"></span><h3><span ng-bind="dayTwo| number:0"></span>&deg;<h3></li>
+  <li><p ng-bind="dayThreeDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayThreeForecastIcon"></span><h3><span ng-bind="dayThree| number:0"></span>&deg;<h3></li>
+  <li><p ng-bind="dayFourDate | date: 'EEEE'"></p><br><span class="forecastIcon ng-class: dayFourForecastIcon"></span><h3><span ng-bind=" dayFour| number:0"></span>&deg;<h3></li>
+</ul>
+</section>
